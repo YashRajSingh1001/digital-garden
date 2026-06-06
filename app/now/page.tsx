@@ -7,81 +7,35 @@ export default function NowPage() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-16 animate-[fade-in_0.4s_ease-out_both]">
       <div className="mb-10">
-        <h1 className="font-display text-4xl font-bold text-[#18120a] mb-3">Now</h1>
-        <p className="text-[#7a6a58] text-sm">
-          Updated June 2026 · Bangalore, India
-        </p>
+        <h1 className="font-display text-4xl font-bold text-[#e2e8f8] mb-3">Now</h1>
+        <p className="text-[#6b7fa3] text-sm">Updated June 2026 · Bangalore, India</p>
       </div>
 
       <div className="space-y-10">
-        <section>
-          <h2 className="text-xs text-[#7a6a58] uppercase tracking-widest mb-4">building</h2>
-          <ul className="space-y-3">
-            {[
-              "This digital garden — getting my thoughts off my head and onto the internet.",
-            ].map((item, i) => (
-              <li key={i} className="flex gap-3 text-sm text-[#18120a]">
-                <span className="text-[#b45309] shrink-0 mt-0.5">▸</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <div className="border-t border-[#e0d8cc]" />
-
-        <section>
-          <h2 className="text-xs text-[#7a6a58] uppercase tracking-widest mb-4">reading</h2>
-          <ul className="space-y-3">
-            {["Add what you're reading here."].map((item, i) => (
-              <li key={i} className="flex gap-3 text-sm text-[#18120a]">
-                <span className="text-[#b45309] shrink-0 mt-0.5">▸</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <div className="border-t border-[#e0d8cc]" />
-
-        <section>
-          <h2 className="text-xs text-[#7a6a58] uppercase tracking-widest mb-4">running</h2>
-          <ul className="space-y-3">
-            {[
-              "Training consistently — 11 runs in the last 4 weeks.",
-              "Working towards a half marathon.",
-            ].map((item, i) => (
-              <li key={i} className="flex gap-3 text-sm text-[#18120a]">
-                <span className="text-[#b45309] shrink-0 mt-0.5">▸</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <div className="border-t border-[#e0d8cc]" />
-
-        <section>
-          <h2 className="text-xs text-[#7a6a58] uppercase tracking-widest mb-4">thinking about</h2>
-          <ul className="space-y-3">
-            {["Add what's on your mind right now."].map((item, i) => (
-              <li key={i} className="flex gap-3 text-sm text-[#18120a]">
-                <span className="text-[#b45309] shrink-0 mt-0.5">▸</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
+        {[
+          { label: "building", items: ["This digital garden — getting my thoughts off my head and onto the internet."] },
+          { label: "reading", items: ["Add what you're reading here."] },
+          { label: "running", items: ["Training consistently — 11 runs in the last 4 weeks.", "Working towards a half marathon."] },
+          { label: "thinking about", items: ["Add what's on your mind right now."] },
+        ].map(({ label, items }, si) => (
+          <div key={si}>
+            {si > 0 && <div className="border-t border-[#1a2d50] mb-10" />}
+            <h2 className="text-[10px] text-[#6b7fa3] uppercase tracking-widest mb-4">{label}</h2>
+            <ul className="space-y-3">
+              {items.map((item, i) => (
+                <li key={i} className="flex gap-3 text-sm text-[#e2e8f8]">
+                  <span className="text-[#7c3aed] shrink-0 mt-0.5">▸</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
 
-      <p className="text-xs text-[#7a6a58] mt-12">
+      <p className="text-xs text-[#6b7fa3] mt-12">
         This is a{" "}
-        <a
-          href="https://nownownow.com/about"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[#b45309] hover:underline"
-        >
+        <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer" className="text-[#a78bfa] hover:underline">
           now page
         </a>
         . The idea is simple: what would you tell a friend you haven&apos;t seen in a while?
