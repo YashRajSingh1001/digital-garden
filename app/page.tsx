@@ -29,6 +29,13 @@ const navSections = [
 
 const skills = ["Python", "SQL", "PySpark", "Azure Databricks", "Machine Learning", "Tableau", "MetaBase", "Alteryx", "AWS", "Google Apps Script"];
 
+const socials = [
+  { href: "https://github.com/YashRajSingh1001", label: "GitHub" },
+  { href: "https://www.linkedin.com/in/yash-raj-singh-1001/", label: "LinkedIn" },
+  { href: "https://www.instagram.com/yashraj.decodes/", label: "Instagram" },
+  { href: "https://www.strava.com/athletes/112189344", label: "Strava" },
+];
+
 export default async function Home() {
   const [stats, lastActivity, writings] = await Promise.all([
     getStravaStats(),
@@ -40,92 +47,89 @@ export default async function Home() {
   const currentAge = age();
 
   return (
-    <div className="mx-auto max-w-5xl px-6 pt-24 pb-20 animate-[fade-in_0.4s_ease-out_both]">
-      {/* ── Hero: two-column ── */}
-      <div className="flex gap-8 items-start mb-20">
+    <div className="mx-auto max-w-6xl px-8 pt-24 pb-20 animate-[fade-in_0.4s_ease-out_both]">
 
-        {/* Left — Profile card */}
-        <aside className="w-72 shrink-0">
-          <div className="rounded-2xl border border-[#1a2d50] bg-[#0d1830] overflow-hidden">
-            {/* Photo area */}
-            <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-[#112040] via-[#0d1830] to-[#070e1f] flex items-center justify-center overflow-hidden">
-              {/*
-                Replace this placeholder with your actual photo:
-                1. Drop your photo into the /public folder as "photo.jpg"
-                2. Replace the div below with:
-                   <img src="/photo.jpg" alt="Yash Raj Singh" className="w-full h-full object-cover object-top" />
-              */}
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-24 h-24 rounded-full bg-[#1a2d50] border-2 border-[#7c3aed]/50 flex items-center justify-center">
-                  <span className="font-display text-4xl font-bold text-[#a78bfa]">Y</span>
-                </div>
-                <p className="text-xs text-[#6b7fa3]">add photo.jpg to /public</p>
+      {/* ── HERO: two-column exactly like discoverwithsingh ── */}
+      <div className="flex gap-12 items-start mb-24">
+
+        {/* ── LEFT: Profile Card ── */}
+        <div className="w-[300px] shrink-0 rounded-2xl border border-[#1a2d50] bg-[#0d1830] overflow-hidden">
+
+          {/* Photo — full width, square */}
+          <div className="w-full aspect-square bg-gradient-to-br from-[#0f2040] to-[#0a1628] relative overflow-hidden flex items-center justify-center">
+            {/*
+              TO ADD YOUR PHOTO:
+              1. Copy your photo to: public/photo.jpg
+              2. Delete the placeholder div below
+              3. Uncomment this line:
+              <img src="/photo.jpg" alt="Yash Raj Singh" className="w-full h-full object-cover object-top" />
+            */}
+            <div className="flex flex-col items-center gap-4 relative z-10">
+              <div className="w-28 h-28 rounded-full bg-[#1a2d50] border-2 border-[#7c3aed]/60 flex items-center justify-center">
+                <span className="font-display text-5xl font-bold text-[#a78bfa]">Y</span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1830] via-transparent to-transparent" />
+              <p className="text-xs text-[#6b7fa3] text-center px-4">Drop <code className="text-[#a78bfa]">photo.jpg</code> in <code className="text-[#a78bfa]">/public</code></p>
             </div>
+            {/* gradient fade at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0d1830] to-transparent" />
+          </div>
 
-            {/* Card info */}
-            <div className="px-5 py-4">
-              <p className="font-semibold text-[#e2e8f8] text-base">Yash Raj Singh</p>
-              <p className="text-xs text-[#a78bfa] mt-0.5">@yashraj.decodes</p>
-              <p className="text-xs text-[#a78bfa] mt-1 font-medium">Data Scientist II · MiQ</p>
-              <p className="text-xs text-[#6b7fa3] mt-1.5 leading-relaxed">
-                BSc Math Honours, Delhi University · Diploma Data Science, IIT Madras
-              </p>
+          {/* Card info — centered like reference */}
+          <div className="px-6 py-5 text-center">
+            <p className="font-bold text-[#e2e8f8] text-lg leading-snug">Yash Raj Singh</p>
+            <p className="text-sm text-[#6b8cbf] mt-1">@yashraj.decodes</p>
+            <p className="text-xs text-[#6b7fa3] mt-2 leading-relaxed">
+              Data Scientist II · MiQ
+            </p>
 
-              <div className="border-t border-[#1a2d50] my-3" />
+            <div className="border-t border-[#1a2d50] my-4" />
 
-              {/* Socials */}
-              <div className="flex flex-wrap gap-1.5">
-                {[
-                  { href: "https://github.com/YashRajSingh1001", label: "GitHub" },
-                  { href: "https://www.linkedin.com/in/yash-raj-singh-1001/", label: "LinkedIn" },
-                  { href: "https://www.instagram.com/yashraj.decodes/", label: "Instagram" },
-                  { href: "https://www.strava.com/athletes/112189344", label: "Strava" },
-                ].map(({ href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[10px] px-2.5 py-1 rounded-full border border-[#1a2d50] text-[#6b7fa3] hover:text-[#a78bfa] hover:border-[#7c3aed]/40 transition-colors"
-                  >
-                    {label}
-                  </a>
-                ))}
-              </div>
+            {/* Social pills */}
+            <div className="flex flex-wrap justify-center gap-2">
+              {socials.map(({ href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] px-3 py-1 rounded-full border border-[#1a2d50] text-[#6b7fa3] hover:text-[#a78bfa] hover:border-[#7c3aed]/50 transition-colors"
+                >
+                  {label}
+                </a>
+              ))}
             </div>
           </div>
-        </aside>
+        </div>
 
-        {/* Right — Content */}
-        <div className="flex-1 min-w-0 pt-2">
-          <p className="text-xs text-[#6b7fa3] uppercase tracking-widest mb-3">About</p>
-          <h1 className="font-display text-5xl font-bold text-[#e2e8f8] mb-5 leading-tight">
+        {/* ── RIGHT: Content ── */}
+        <div className="flex-1 min-w-0 pt-1">
+          <p className="text-xs font-semibold text-[#4f8ef7] uppercase tracking-[0.15em] mb-4">About</p>
+
+          <h1 className="font-display text-6xl font-bold text-[#e2e8f8] leading-tight mb-6">
             Hi, I&apos;m Yash.
           </h1>
 
           <p className="text-[#94a3b8] text-lg leading-relaxed mb-4">
-            Data Scientist II at MiQ. Background in Mathematics &amp; Statistics (Delhi University, 9.09 GPA)
-            and Business Analytics &amp; Data Science (IIT Madras, 8.64 CGPA). I turn messy data into
-            decisions that actually matter.
+            Data Scientist II at MiQ. Background in Mathematics &amp; Statistics
+            (Delhi University, 9.09 GPA) and Business Analytics &amp; Data Science
+            (IIT Madras, 8.64 CGPA).
           </p>
 
           <p className="text-[#6b7fa3] leading-relaxed mb-4">
-            Previously at Treebo and TresVista — working with executives on revenue strategy, building BI dashboards,
-            and automating data pipelines. Now at MiQ going deeper: PySpark, Azure Databricks, ML at scale.
-            AWS certified in Cloud and AI (Oct–Nov 2025).
+            Previously at Treebo and TresVista — revenue strategy, BI dashboards,
+            automated pipelines. Now at MiQ going deeper: PySpark, Azure Databricks,
+            ML at scale. AWS certified in Cloud &amp; AI (2025).
           </p>
 
-          <p className="text-[#6b7fa3] leading-relaxed mb-6">
-            This is my digital garden — thoughts, projects, and lessons as they evolve. Not someone
-            who has all the answers. Just someone documenting the path.
+          <p className="text-[#6b7fa3] leading-relaxed mb-8">
+            This is my digital garden — not someone who has all the answers,
+            just someone documenting the path.
           </p>
 
           {/* Skills */}
-          <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 mb-8">
             {skills.map((s) => (
-              <span key={s} className="text-xs px-3 py-1 rounded-full bg-[#112040] border border-[#1a2d50] text-[#6b7fa3]">
+              <span key={s} className="text-xs px-3 py-1.5 rounded-full bg-[#0f2040] border border-[#1a2d50] text-[#6b7fa3]">
                 {s}
               </span>
             ))}
@@ -133,31 +137,30 @@ export default async function Home() {
 
           <a
             href="mailto:yashrajsingh1001@gmail.com"
-            className="inline-flex items-center gap-2 text-sm text-[#a78bfa] border border-[#7c3aed]/30 rounded-full px-4 py-2 hover:bg-[#7c3aed]/10 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-white bg-[#7c3aed] hover:bg-[#6d28d9] px-5 py-2.5 rounded-full transition-colors shadow-[0_0_20px_#7c3aed33]"
           >
-            ✉ yashrajsingh1001@gmail.com
+            Get in touch
           </a>
         </div>
       </div>
 
-      {/* ── Strava ── */}
-      <section className="mb-16">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-2 h-2 rounded-full bg-[#22c55e] shadow-[0_0_8px_#22c55e]" />
-          <span className="text-[10px] text-[#6b7fa3] uppercase tracking-widest">on the move</span>
-        </div>
+      {/* ── SECTIONS BELOW ── */}
+
+      {/* Strava */}
+      <section className="mb-14">
+        <p className="text-xs font-semibold text-[#4f8ef7] uppercase tracking-[0.15em] mb-4">On the move</p>
         <StravaWidget stats={stats} lastActivity={lastActivity} />
       </section>
 
-      {/* ── Explore ── */}
-      <section className="mb-16">
-        <p className="text-[10px] text-[#6b7fa3] uppercase tracking-widest mb-5">explore</p>
-        <ul className="space-y-px">
+      {/* Explore */}
+      <section className="mb-14">
+        <p className="text-xs font-semibold text-[#4f8ef7] uppercase tracking-[0.15em] mb-5">Explore</p>
+        <ul className="space-y-1">
           {navSections.map(({ href, label, desc }) => (
             <li key={href}>
               <Link
                 href={href}
-                className="group flex items-baseline gap-4 rounded-lg px-3 py-3.5 -mx-3 hover:bg-[#0d1830] transition-colors"
+                className="group flex items-baseline gap-6 rounded-xl px-4 py-3.5 -mx-4 hover:bg-[#0d1830] transition-colors"
               >
                 <span className="w-28 shrink-0 text-sm font-medium text-[#a78bfa] group-hover:text-[#c4b5fd] transition-colors">
                   {label}
@@ -165,25 +168,23 @@ export default async function Home() {
                 <span className="text-sm text-[#6b7fa3] group-hover:text-[#94a3b8] transition-colors">
                   {desc}
                 </span>
-                <span className="ml-auto text-[#1a2d50] group-hover:text-[#7c3aed] transition-colors text-lg leading-none">
-                  →
-                </span>
+                <span className="ml-auto text-[#1a2d50] group-hover:text-[#7c3aed] transition-colors">→</span>
               </Link>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* ── Recent writings ── */}
+      {/* Recent writings */}
       {writings.length > 0 && (
-        <section className="mb-16">
-          <p className="text-[10px] text-[#6b7fa3] uppercase tracking-widest mb-5">recent writings</p>
+        <section className="mb-14">
+          <p className="text-xs font-semibold text-[#4f8ef7] uppercase tracking-[0.15em] mb-5">Recent writings</p>
           <ul className="space-y-1">
             {writings.map((w) => (
               <li key={w.slug}>
                 <Link
                   href={`/writings/${w.slug}`}
-                  className="group flex items-baseline justify-between gap-4 rounded-lg px-3 py-2.5 -mx-3 hover:bg-[#0d1830] transition-colors"
+                  className="group flex items-center justify-between gap-4 rounded-xl px-4 py-3 -mx-4 hover:bg-[#0d1830] transition-colors"
                 >
                   <span className="text-sm text-[#e2e8f8] group-hover:text-[#a78bfa] transition-colors">
                     {w.title}
@@ -201,35 +202,36 @@ export default async function Home() {
         </section>
       )}
 
-      {/* ── Days until 30 ── */}
-      <section className="mb-16">
-        <div className="rounded-xl border border-[#1a2d50] bg-[#0d1830] px-5 py-4">
-          <div className="flex items-center justify-between">
+      {/* Days until 30 */}
+      <section className="mb-14">
+        <p className="text-xs font-semibold text-[#4f8ef7] uppercase tracking-[0.15em] mb-4">The countdown</p>
+        <div className="rounded-2xl border border-[#1a2d50] bg-[#0d1830] px-6 py-5">
+          <div className="flex items-center justify-between mb-4">
             <div>
               <p className="text-[10px] text-[#6b7fa3] uppercase tracking-widest mb-1">days until 30</p>
-              <p className="font-display text-3xl font-bold text-[#a78bfa]">{days.toLocaleString()}</p>
+              <p className="font-display text-4xl font-bold text-[#a78bfa]">{days.toLocaleString()}</p>
             </div>
             <div className="text-right">
-              <p className="text-[10px] text-[#6b7fa3] uppercase tracking-widest mb-1">the deadline</p>
+              <p className="text-[10px] text-[#6b7fa3] uppercase tracking-widest mb-1">deadline</p>
               <p className="text-sm text-[#e2e8f8]">June 23, 2032</p>
             </div>
           </div>
-          <div className="mt-4">
-            <div className="h-1 rounded-full bg-[#1a2d50] overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] rounded-full"
-                style={{ width: `${Math.min(100, ((currentAge - 18) / 12) * 100)}%` }}
-              />
-            </div>
-            <p className="text-[10px] text-[#6b7fa3] mt-1.5">{currentAge} → 30 · use it well</p>
+          <div className="h-1.5 rounded-full bg-[#1a2d50] overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] rounded-full"
+              style={{ width: `${Math.min(100, ((currentAge - 18) / 12) * 100)}%` }}
+            />
           </div>
+          <p className="text-[10px] text-[#6b7fa3] mt-2">{currentAge} → 30 · use it well</p>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-[#1a2d50] pt-8 flex items-center justify-between">
         <span className="text-xs text-[#6b7fa3]">yash raj singh · {new Date().getFullYear()}</span>
-        <span className="text-xs text-[#1a2d50]">built with next.js</span>
+        <a href="mailto:yashrajsingh1001@gmail.com" className="text-xs text-[#6b7fa3] hover:text-[#a78bfa] transition-colors">
+          yashrajsingh1001@gmail.com
+        </a>
       </footer>
     </div>
   );
