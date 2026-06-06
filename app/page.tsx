@@ -30,8 +30,8 @@ const navSections = [
 
 const socials = [
   { href: "https://github.com/YashRajSingh1001", label: "GitHub" },
-  { href: "https://twitter.com/", label: "X" },
-  { href: "https://linkedin.com/", label: "LinkedIn" },
+  { href: "https://www.linkedin.com/in/yash-raj-singh-1001/", label: "LinkedIn" },
+  { href: "https://www.instagram.com/yashraj.decodes/", label: "Instagram" },
   { href: "https://www.strava.com/athletes/112189344", label: "Strava" },
 ];
 
@@ -72,7 +72,7 @@ export default async function Home() {
               <div className="border-t border-[#1a2d50] my-3" />
 
               <p className="text-xs text-[#6b7fa3] leading-relaxed mb-4">
-                Running, building, thinking out loud. Not polished. Not perfect. Just evolving.
+                Data professional. Math &amp; Stats, Delhi University · Business Analytics &amp; Data Science, IIT Madras. Making sense of numbers, one dataset at a time.
               </p>
 
               {/* Social links */}
@@ -114,9 +114,17 @@ export default async function Home() {
               Hi, I&apos;m Yash.
             </h1>
             <p className="text-[#6b7fa3] text-lg leading-relaxed max-w-lg">
-              {currentAge} years old. Running, building, thinking out loud.
-              This is my digital garden — a place for ideas that are growing, not finished.
+              Data professional with a background in Mathematics &amp; Statistics (Delhi University) and Business Analytics &amp; Data Science (IIT Madras). I work with SQL, Python, Tableau and friends to turn messy data into decisions that actually matter.
             </p>
+            <p className="text-[#6b7fa3] text-base leading-relaxed max-w-lg mt-3">
+              This is my digital garden — thoughts, projects, and lessons as they evolve. Not polished. Not finished. Just honest.
+            </p>
+            <a
+              href="mailto:yashrajsingh1001@gmail.com"
+              className="inline-flex items-center gap-2 mt-5 text-sm text-[#a78bfa] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 hover:bg-[#7c3aed]/10 transition-colors"
+            >
+              ✉ yashrajsingh1001@gmail.com
+            </a>
           </section>
 
           {/* Strava */}
