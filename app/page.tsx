@@ -27,7 +27,7 @@ const navSections = [
   { href: "/now",          label: "now",          desc: "what I'm doing, thinking, reading right now" },
 ];
 
-const skills = ["SQL", "Python", "Machine Learning", "Tableau", "MetaBase", "Alteryx", "Strategy Consulting"];
+const skills = ["Python", "SQL", "PySpark", "Azure Databricks", "Machine Learning", "Tableau", "MetaBase", "Alteryx", "AWS", "Google Apps Script"];
 
 export default async function Home() {
   const [stats, lastActivity, writings] = await Promise.all([
@@ -68,8 +68,9 @@ export default async function Home() {
             <div className="px-5 py-4">
               <p className="font-semibold text-[#e2e8f8] text-base">Yash Raj Singh</p>
               <p className="text-xs text-[#a78bfa] mt-0.5">@yashraj.decodes</p>
-              <p className="text-xs text-[#6b7fa3] mt-2 leading-relaxed">
-                Data professional · Math &amp; Stats, Delhi University · Business Analytics, IIT Madras
+              <p className="text-xs text-[#a78bfa] mt-1 font-medium">Data Scientist II · MiQ</p>
+              <p className="text-xs text-[#6b7fa3] mt-1.5 leading-relaxed">
+                BSc Math Honours, Delhi University · Diploma Data Science, IIT Madras
               </p>
 
               <div className="border-t border-[#1a2d50] my-3" />
@@ -105,15 +106,15 @@ export default async function Home() {
           </h1>
 
           <p className="text-[#94a3b8] text-lg leading-relaxed mb-4">
-            Data professional with a background in Mathematics &amp; Statistics (Delhi University)
-            and Business Analytics &amp; Data Science (IIT Madras). I turn messy data into
+            Data Scientist II at MiQ. Background in Mathematics &amp; Statistics (Delhi University, 9.09 GPA)
+            and Business Analytics &amp; Data Science (IIT Madras, 8.64 CGPA). I turn messy data into
             decisions that actually matter.
           </p>
 
           <p className="text-[#6b7fa3] leading-relaxed mb-4">
-            Through internships across diverse industries — operations, analytics, research — I've
-            built a toolkit that spans SQL, Python, Tableau, and strategy consulting. I care about
-            data accuracy, sophisticated reporting, and the story numbers tell when you treat them right.
+            Previously at Treebo and TresVista — working with executives on revenue strategy, building BI dashboards,
+            and automating data pipelines. Now at MiQ going deeper: PySpark, Azure Databricks, ML at scale.
+            AWS certified in Cloud and AI (Oct–Nov 2025).
           </p>
 
           <p className="text-[#6b7fa3] leading-relaxed mb-6">
