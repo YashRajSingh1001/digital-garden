@@ -21,29 +21,29 @@ export default function WritingsPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 animate-[fade-in_0.4s_ease-out_both]">
       <div className="mb-12">
-        <h1 className="font-display text-4xl font-bold text-[#e2e8f8] mb-3">Writings</h1>
-        <p className="text-[#64748b]">
+        <h1 className="font-display text-4xl font-bold text-[#18120a] mb-3">Writings</h1>
+        <p className="text-[#7a6a58]">
           Essays, thoughts, and things I couldn&apos;t stop thinking about.
         </p>
       </div>
 
       {writings.length === 0 && (
-        <p className="text-[#64748b] text-sm">Nothing published yet. Check back soon.</p>
+        <p className="text-[#7a6a58] text-sm">Nothing published yet. Check back soon.</p>
       )}
 
       <div className="space-y-12">
         {years.map((year) => (
           <div key={year}>
-            <h2 className="text-xs text-[#64748b] uppercase tracking-widest mb-4">{year}</h2>
+            <h2 className="text-xs text-[#7a6a58] uppercase tracking-widest mb-4">{year}</h2>
             <ul className="space-y-px">
               {byYear[year].map((w) => (
                 <li key={w.slug}>
                   <Link
                     href={`/writings/${w.slug}`}
-                    className="group flex items-baseline justify-between gap-4 rounded-lg px-3 py-3 -mx-3 hover:bg-[#0d1224] transition-colors"
+                    className="group flex items-baseline justify-between gap-4 rounded-lg px-3 py-3 -mx-3 hover:bg-[#f5f0e8] transition-colors"
                   >
                     <div className="min-w-0">
-                      <span className="text-sm text-[#e2e8f8] group-hover:text-[#a78bfa] transition-colors block">
+                      <span className="text-sm text-[#18120a] group-hover:text-[#b45309] transition-colors block">
                         {w.title}
                       </span>
                       {w.tags.length > 0 && (
@@ -51,7 +51,7 @@ export default function WritingsPage() {
                           {w.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-[10px] px-1.5 py-0.5 rounded bg-[#1e2a45] text-[#64748b]"
+                              className="text-[10px] px-1.5 py-0.5 rounded bg-[#eee8dd] text-[#7a6a58]"
                             >
                               {tag}
                             </span>
@@ -59,7 +59,7 @@ export default function WritingsPage() {
                         </div>
                       )}
                     </div>
-                    <div className="shrink-0 flex items-center gap-3 text-xs text-[#64748b]">
+                    <div className="shrink-0 flex items-center gap-3 text-xs text-[#7a6a58]">
                       <span>{w.readTime} min</span>
                       <span>
                         {w.date

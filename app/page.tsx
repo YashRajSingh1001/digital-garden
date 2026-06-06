@@ -62,10 +62,10 @@ export default async function Home() {
     <div className="mx-auto max-w-3xl px-6 py-20 animate-[fade-in_0.4s_ease-out_both]">
       {/* Hero */}
       <section className="mb-16">
-        <h1 className="font-display text-5xl font-bold text-[#e2e8f8] mb-4 leading-tight">
+        <h1 className="font-display text-5xl font-bold text-[#18120a] mb-4 leading-tight">
           Yash Raj Singh
         </h1>
-        <p className="text-[#64748b] text-lg leading-relaxed max-w-xl">
+        <p className="text-[#7a6a58] text-lg leading-relaxed max-w-xl">
           {currentAge} years old. Running, building, thinking out loud.
           This is my digital garden — a place for ideas that are growing,
           not finished.
@@ -76,7 +76,7 @@ export default async function Home() {
       <section className="mb-16">
         <div className="flex items-center gap-2 mb-3">
           <div className="w-2 h-2 rounded-full bg-[#22c55e] shadow-[0_0_8px_#22c55e]" />
-          <span className="text-xs text-[#64748b] uppercase tracking-widest">on the move</span>
+          <span className="text-xs text-[#7a6a58] uppercase tracking-widest">on the move</span>
         </div>
         <StravaWidget stats={stats} lastActivity={lastActivity} />
       </section>
@@ -89,15 +89,15 @@ export default async function Home() {
               <Link
                 href={href}
                 className="group flex items-baseline gap-4 rounded-lg px-3 py-3.5 -mx-3
-                  hover:bg-[#0d1224] transition-colors"
+                  hover:bg-[#f5f0e8] transition-colors"
               >
-                <span className="w-32 shrink-0 text-sm font-medium text-[#a78bfa] group-hover:text-[#c4b5fd] transition-colors">
+                <span className="w-32 shrink-0 text-sm font-medium text-[#b45309] group-hover:text-[#d97706] transition-colors">
                   {label}
                 </span>
-                <span className="text-sm text-[#64748b] group-hover:text-[#94a3b8] transition-colors">
+                <span className="text-sm text-[#7a6a58] group-hover:text-[#18120a] transition-colors">
                   {desc}
                 </span>
-                <span className="ml-auto text-[#1e2a45] group-hover:text-[#7c3aed] transition-colors text-lg leading-none">
+                <span className="ml-auto text-[#e0d8cc] group-hover:text-[#b45309] transition-colors text-lg leading-none">
                   →
                 </span>
               </Link>
@@ -108,33 +108,33 @@ export default async function Home() {
 
       {/* 30 countdown */}
       <section className="mb-16">
-        <div className="rounded-xl border border-[#1e2a45] bg-[#0d1224] px-5 py-4">
+        <div className="rounded-xl border border-[#e0d8cc] bg-[#f5f0e8] px-5 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs text-[#64748b] uppercase tracking-widest mb-1">
+              <p className="text-xs text-[#7a6a58] uppercase tracking-widest mb-1">
                 days until 30
               </p>
-              <p className="font-display text-3xl font-bold text-[#a78bfa]">
+              <p className="font-display text-3xl font-bold text-[#b45309]">
                 {days.toLocaleString()}
               </p>
             </div>
             <div className="text-right">
-              <p className="text-xs text-[#64748b] uppercase tracking-widest mb-1">
+              <p className="text-xs text-[#7a6a58] uppercase tracking-widest mb-1">
                 the deadline
               </p>
-              <p className="text-sm text-[#e2e8f8]">June 23, 2032</p>
+              <p className="text-sm text-[#18120a]">June 23, 2032</p>
             </div>
           </div>
           <div className="mt-4">
-            <div className="h-1 rounded-full bg-[#1e2a45] overflow-hidden">
+            <div className="h-1 rounded-full bg-[#e0d8cc] overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] rounded-full"
+                className="h-full bg-gradient-to-r from-[#b45309] to-[#d97706] rounded-full"
                 style={{
                   width: `${Math.min(100, ((currentAge - 18) / 12) * 100)}%`,
                 }}
               />
             </div>
-            <p className="text-xs text-[#64748b] mt-1.5">
+            <p className="text-xs text-[#7a6a58] mt-1.5">
               {currentAge} → 30 · use it well
             </p>
           </div>
@@ -144,7 +144,7 @@ export default async function Home() {
       {/* Recent writings */}
       {writings.length > 0 && (
         <section className="mb-16">
-          <h2 className="text-xs text-[#64748b] uppercase tracking-widest mb-4">
+          <h2 className="text-xs text-[#7a6a58] uppercase tracking-widest mb-4">
             recent writings
           </h2>
           <ul className="space-y-3">
@@ -152,12 +152,12 @@ export default async function Home() {
               <li key={w.slug}>
                 <Link
                   href={`/writings/${w.slug}`}
-                  className="group flex items-baseline justify-between gap-4 rounded-lg px-3 py-2.5 -mx-3 hover:bg-[#0d1224] transition-colors"
+                  className="group flex items-baseline justify-between gap-4 rounded-lg px-3 py-2.5 -mx-3 hover:bg-[#f5f0e8] transition-colors"
                 >
-                  <span className="text-sm text-[#e2e8f8] group-hover:text-[#a78bfa] transition-colors">
+                  <span className="text-sm text-[#18120a] group-hover:text-[#b45309] transition-colors">
                     {w.title}
                   </span>
-                  <span className="shrink-0 text-xs text-[#64748b]">
+                  <span className="shrink-0 text-xs text-[#7a6a58]">
                     {w.date
                       ? new Date(w.date).toLocaleDateString("en-IN", {
                           month: "short",
@@ -171,7 +171,7 @@ export default async function Home() {
           </ul>
           <Link
             href="/writings"
-            className="inline-block mt-3 ml-0 text-xs text-[#7c3aed] hover:text-[#a78bfa] transition-colors"
+            className="inline-block mt-3 text-xs text-[#b45309] hover:text-[#d97706] transition-colors"
           >
             all writings →
           </Link>
@@ -179,13 +179,13 @@ export default async function Home() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-[#1e2a45] pt-8 flex items-center justify-between">
-        <span className="text-xs text-[#64748b]">
+      <footer className="border-t border-[#e0d8cc] pt-8 flex items-center justify-between">
+        <span className="text-xs text-[#7a6a58]">
           yash raj singh · {new Date().getFullYear()}
         </span>
         <div className="flex items-center gap-4">
           {[
-            { href: "https://github.com/", label: "github" },
+            { href: "https://github.com/YashRajSingh1001", label: "github" },
             { href: "https://twitter.com/", label: "x" },
             { href: "https://linkedin.com/", label: "linkedin" },
             { href: "https://www.strava.com/athletes/112189344", label: "strava" },
@@ -195,7 +195,7 @@ export default async function Home() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-[#64748b] hover:text-[#a78bfa] transition-colors"
+              className="text-xs text-[#7a6a58] hover:text-[#b45309] transition-colors"
             >
               {label}
             </a>

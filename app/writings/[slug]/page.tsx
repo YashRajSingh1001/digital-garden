@@ -36,14 +36,14 @@ export default async function WritingPage(props: PageProps<"/writings/[slug]">) 
       <div className="mb-10">
         <Link
           href="/writings"
-          className="text-xs text-[#64748b] hover:text-[#a78bfa] transition-colors mb-6 inline-block"
+          className="text-xs text-[#7a6a58] hover:text-[#b45309] transition-colors mb-6 inline-block"
         >
           ← all writings
         </Link>
-        <h1 className="font-display text-4xl font-bold text-[#e2e8f8] mb-4 leading-tight">
+        <h1 className="font-display text-4xl font-bold text-[#18120a] mb-4 leading-tight">
           {writing.title}
         </h1>
-        <div className="flex items-center gap-4 text-xs text-[#64748b]">
+        <div className="flex items-center gap-4 text-xs text-[#7a6a58]">
           {writing.date && (
             <span>
               {new Date(writing.date).toLocaleDateString("en-IN", {
@@ -55,10 +55,7 @@ export default async function WritingPage(props: PageProps<"/writings/[slug]">) 
           )}
           <span>{writing.readTime} min read</span>
           {writing.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-0.5 rounded bg-[#1e2a45] text-[#64748b]"
-            >
+            <span key={tag} className="px-2 py-0.5 rounded bg-[#eee8dd] text-[#7a6a58]">
               {tag}
             </span>
           ))}
