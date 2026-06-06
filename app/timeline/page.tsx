@@ -1,14 +1,11 @@
 import { milestones, type Milestone } from "@/data/timeline";
 
-export const metadata = {
-  title: "Timeline — Yash Raj Singh",
-  description: "A rough map of where I've been.",
-};
+export const metadata = { title: "Timeline — Yash Raj Singh" };
 
 const typeStyles: Record<Milestone["type"], { dot: string; label: string; labelColor: string }> = {
-  work:      { dot: "bg-[#06b6d4] shadow-[0_0_8px_#06b6d466]", label: "work",      labelColor: "text-[#06b6d4] bg-[#06b6d4]/10" },
+  work:      { dot: "bg-[#3b6ef7] shadow-[0_0_8px_#3b6ef766]", label: "work",      labelColor: "text-[#7babf8] bg-[#3b6ef7]/10" },
   life:      { dot: "bg-[#22c55e] shadow-[0_0_8px_#22c55e66]", label: "life",      labelColor: "text-[#22c55e] bg-[#22c55e]/10" },
-  project:   { dot: "bg-[#a78bfa] shadow-[0_0_8px_#a78bfa66]", label: "project",   labelColor: "text-[#a78bfa] bg-[#a78bfa]/10" },
+  project:   { dot: "bg-[#7babf8] shadow-[0_0_8px_#7babf866]", label: "project",   labelColor: "text-[#7babf8] bg-[#7babf8]/10" },
   education: { dot: "bg-[#f59e0b] shadow-[0_0_8px_#f59e0b66]", label: "education", labelColor: "text-[#f59e0b] bg-[#f59e0b]/10" },
 };
 
@@ -19,9 +16,8 @@ export default function TimelinePage() {
         <h1 className="font-display text-4xl font-bold text-[#e2e8f8] mb-3">Timeline</h1>
         <p className="text-[#6b7fa3]">A rough map of where I&apos;ve been.</p>
       </div>
-
       <div className="relative">
-        <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#7c3aed] via-[#1a2d50] to-transparent" />
+        <div className="absolute left-[5px] top-2 bottom-2 w-px bg-gradient-to-b from-[#3b6ef7] via-[#1a3060] to-transparent" />
         <div className="space-y-10 pl-8">
           {[...milestones].reverse().map((m, i) => {
             const s = typeStyles[m.type];

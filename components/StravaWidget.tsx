@@ -1,10 +1,4 @@
-import {
-  type StravaActivity,
-  type StravaStats,
-  formatDistance,
-  formatDuration,
-  formatPace,
-} from "@/lib/strava";
+import { type StravaActivity, type StravaStats, formatDistance, formatDuration, formatPace } from "@/lib/strava";
 
 function StatBox({ label, value }: { label: string; value: string }) {
   return (
@@ -15,31 +9,25 @@ function StatBox({ label, value }: { label: string; value: string }) {
   );
 }
 
-interface Props {
-  stats: StravaStats | null;
-  lastActivity: StravaActivity | null;
-}
+interface Props { stats: StravaStats | null; lastActivity: StravaActivity | null; }
 
 export default function StravaWidget({ stats, lastActivity }: Props) {
   if (!stats && !lastActivity) {
     return (
-      <div className="rounded-xl border border-[#1a2d50] bg-[#0d1830] px-5 py-4 text-sm text-[#6b7fa3]">
+      <div className="rounded-xl border border-[#1a3060] bg-[#0c1a35] px-5 py-4 text-sm text-[#6b7fa3]">
         Strava not connected — add env vars to enable.
       </div>
     );
   }
-
   return (
-    <div className="rounded-xl border border-[#1a2d50] bg-[#0d1830] px-5 py-4 space-y-4">
+    <div className="rounded-xl border border-[#1a3060] bg-[#0c1a35] px-5 py-4 space-y-4">
       {lastActivity && (
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
             <p className="text-[10px] text-[#6b7fa3] uppercase tracking-widest mb-1">Last run</p>
             <p className="text-sm text-[#e2e8f8] font-medium truncate">{lastActivity.name}</p>
             <p className="text-xs text-[#6b7fa3] mt-0.5">
-              {new Date(lastActivity.start_date_local).toLocaleDateString("en-IN", {
-                day: "numeric", month: "short", year: "numeric",
-              })}
+              {new Date(lastActivity.start_date_local).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
             </p>
           </div>
           <div className="flex gap-4 shrink-0">
@@ -51,7 +39,7 @@ export default function StravaWidget({ stats, lastActivity }: Props) {
       )}
       {stats && (
         <>
-          <div className="border-t border-[#1a2d50]" />
+          <div className="border-t border-[#1a3060]" />
           <div className="flex gap-6">
             <StatBox label="runs this year" value={stats.ytdRuns.toString()} />
             <StatBox label="km this year" value={formatDistance(stats.ytdDistance)} />

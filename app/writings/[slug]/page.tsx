@@ -25,26 +25,17 @@ export default async function WritingPage(props: PageProps<"/writings/[slug]">) 
   const { slug } = await props.params;
   const writing = getWritingBySlug(slug);
   if (!writing) notFound();
-
   const html = await markdownToHtml(writing.content);
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-16 animate-[fade-in_0.4s_ease-out_both]">
       <div className="mb-10">
-        <Link href="/writings" className="text-xs text-[#6b7fa3] hover:text-[#a78bfa] transition-colors mb-6 inline-block">
-          ← all writings
-        </Link>
-        <h1 className="font-display text-4xl font-bold text-[#e2e8f8] mb-4 leading-tight">
-          {writing.title}
-        </h1>
+        <Link href="/writings" className="text-xs text-[#6b7fa3] hover:text-[#7babf8] transition-colors mb-6 inline-block">← all writings</Link>
+        <h1 className="font-display text-4xl font-bold text-[#e2e8f8] mb-4 leading-tight">{writing.title}</h1>
         <div className="flex items-center gap-4 text-xs text-[#6b7fa3]">
-          {writing.date && (
-            <span>{new Date(writing.date).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</span>
-          )}
+          {writing.date && <span>{new Date(writing.date).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</span>}
           <span>{writing.readTime} min read</span>
-          {writing.tags.map((tag) => (
-            <span key={tag} className="px-2 py-0.5 rounded bg-[#1a2d50] text-[#6b7fa3]">{tag}</span>
-          ))}
+          {writing.tags.map((tag) => <span key={tag} className="px-2 py-0.5 rounded bg-[#1a3060] text-[#6b7fa3]">{tag}</span>)}
         </div>
       </div>
       <div className="prose prose-sm max-w-none" dangerouslySetInnerHTML={{ __html: html }} />

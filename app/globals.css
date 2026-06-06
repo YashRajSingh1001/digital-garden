@@ -2,14 +2,14 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-bg: #070e1f;
-  --color-surface: #0d1830;
-  --color-surface-2: #112040;
-  --color-border: #1a2d50;
+  --color-bg: #070d1f;
+  --color-surface: #0c1a35;
+  --color-surface-2: #0f2040;
+  --color-border: #1a3060;
   --color-fg: #e2e8f8;
   --color-muted: #6b7fa3;
-  --color-accent: #7c3aed;
-  --color-accent-light: #a78bfa;
+  --color-accent: #3b6ef7;
+  --color-accent-light: #7babf8;
 
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
   --font-display: var(--font-playfair), Georgia, serif;
@@ -33,47 +33,45 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #070e1f;
+  background-color: #070d1f;
   color: #e2e8f8;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  /* Subtle radial gradient like in the reference */
-  background-image: radial-gradient(ellipse at 60% 0%, #0d1f45 0%, #070e1f 60%);
+  background-image: radial-gradient(ellipse 80% 50% at 50% -10%, #0d2155 0%, #070d1f 70%);
   background-attachment: fixed;
 }
 
 ::selection {
-  background-color: rgba(124, 58, 237, 0.25);
-  color: #a78bfa;
+  background-color: rgba(59, 110, 247, 0.25);
+  color: #7babf8;
 }
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #070e1f; }
-::-webkit-scrollbar-thumb { background: #1a2d50; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.4); }
+::-webkit-scrollbar-track { background: #070d1f; }
+::-webkit-scrollbar-thumb { background: #1a3060; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(59, 110, 247, 0.5); }
 
-/* Prose overrides */
 .prose {
   --tw-prose-body: #e2e8f8;
   --tw-prose-headings: #e2e8f8;
-  --tw-prose-links: #a78bfa;
+  --tw-prose-links: #7babf8;
   --tw-prose-bold: #e2e8f8;
   --tw-prose-counters: #6b7fa3;
-  --tw-prose-bullets: #7c3aed;
-  --tw-prose-hr: #1a2d50;
-  --tw-prose-quotes: #a78bfa;
-  --tw-prose-quote-borders: #7c3aed;
+  --tw-prose-bullets: #3b6ef7;
+  --tw-prose-hr: #1a3060;
+  --tw-prose-quotes: #7babf8;
+  --tw-prose-quote-borders: #3b6ef7;
   --tw-prose-captions: #6b7fa3;
-  --tw-prose-code: #a78bfa;
+  --tw-prose-code: #7babf8;
   --tw-prose-pre-code: #e2e8f8;
-  --tw-prose-pre-bg: #0d1830;
-  --tw-prose-th-borders: #1a2d50;
-  --tw-prose-td-borders: #1a2d50;
+  --tw-prose-pre-bg: #0c1a35;
+  --tw-prose-th-borders: #1a3060;
+  --tw-prose-td-borders: #1a3060;
 }
 
 code:not(pre code) {
-  background: #1a2d50;
-  color: #a78bfa;
+  background: #1a3060;
+  color: #7babf8;
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.875em;
