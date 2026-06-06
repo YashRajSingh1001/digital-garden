@@ -67,8 +67,7 @@ export default async function Home() {
         </h1>
         <p className="text-[#7a6a58] text-lg leading-relaxed max-w-xl">
           {currentAge} years old. Running, building, thinking out loud.
-          This is my digital garden — a place for ideas that are growing,
-          not finished.
+          Not polished. Not perfect. Just thoughts, projects, and lessons as they evolve.
         </p>
       </section>
 
