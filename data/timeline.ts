@@ -66,7 +66,7 @@ export const milestones: Milestone[] = [
     year: "2026",
     month: "March",
     title: "Data Scientist II — MiQ, Bengaluru",
-    description: "Promotion. From business analytics to data science — the work gets more interesting from here.",
+    description: "Promoted. Same curiosity, bigger problems — now with the title to match the work I was already doing.",
     type: "work",
   },
   {
