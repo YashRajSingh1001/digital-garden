@@ -1,6 +1,6 @@
 ---
 title: "Why I'm Building in Public"
-date: "2026-05-15"
+date: "2026-05-01"
 excerpt: "There's something uncomfortable about showing work before it's ready. That discomfort might be exactly the point."
 tags: ["building", "writing"]
 ---
@@ -13,9 +13,9 @@ I didn't. Not for years.
 
 The problem with waiting for perfect is that perfect is a horizon. You can move toward it but you never arrive. And in the meantime, the work just sits there, unseen, getting heavier.
 
-This garden is my experiment in the opposite direction. Writing before I've figured it out. Sharing before it's finished. Letting the roughness exist in public.
+This setup is my experiment in the opposite direction. Writing before I've figured it out. Sharing before it's finished. Letting the roughness exist in public.
 
-The theory is that the stakes of being seen — the mild vulnerability of having an opinion on the internet — makes me think harder, write more honestly, and actually finish things.
+The theory is that the stakes of being seen, the mild vulnerability of having an opinion on the internet, makes me think harder, write more honestly, and actually finish things.
 
 We'll see if the theory holds.
 
