@@ -1,8 +1,9 @@
 ---
 title: "On Running"
-date: "2026-06-01"
+date: "2026-06-07"
 excerpt: "Running taught me that the difference between a good day and a bad day is mostly just showing up."
 tags: ["running", "life"]
+mediumUrl: "https://medium.com/@yashrajsingh1001/REPLACE-WITH-YOUR-MEDIUM-URL"
 ---
 
 Running taught me that the difference between a good day and a bad day is mostly just showing up.
